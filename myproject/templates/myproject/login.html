@@ -1,0 +1,65 @@
+{%extends "myproject/layout.html" %}
+
+{%block body%}
+
+<head>
+    <style type="text/css">
+        
+         h1{
+        color: white;
+        font-family: Lobster;
+    }
+    </style>
+</head>
+
+
+<body style="background-color: black">
+
+    {% if message %}
+    <br/>
+    <center>
+        <div class="alert alert-danger" role="alert">{{ message }}</div>
+    </center>
+    {% endif %}
+
+
+<br/>
+<div class="nav">
+<h1><a style="color: white" href="{%url 'index' %}">Black Clover</a></h1>
+
+</div>
+
+    <div class="d-flex justify-content-center h-100">
+        <div class="card" style="background-color: black">
+            
+            <div class="card-body">
+                <h3 style="color: white;font-family: veranda">Log In</h3> 
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                   <div class="md-form">
+                        <i class="fa fa-user"></i>
+                        <input type="text" class="form-control" name="username" placeholder="Username">                                
+                    </div>
+                    
+
+                    <div class="md-form">
+                        <i class="fa fa-key"></i>
+                        <input type="password" class="form-control" name="password" placeholder="Password">                                
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Login" style="background-color: red;color :white"  type="submit" value="Login" class="btn float-auto login_btn">
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <div style="color: white;text-align: center">                   
+    Don't have an account? <a href="{% url 'register' %}">Register here.</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+ {%endblock%}
