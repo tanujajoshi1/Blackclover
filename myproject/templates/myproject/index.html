@@ -1,7 +1,7 @@
 {%extends "myproject/layout.html" %}
 {% load static  %}
 
-{%block title%} MyProject {%endblock%}
+{%block title%} Blackclover {%endblock%}
 
 {%block body%}
 <head>
@@ -66,11 +66,12 @@
      <center>
      <label >No one<br>will ever be able to fully understand the internal battles<br>you had to endure just to heal, just to grow, just to make it here today.<br>Be proud of yourself</label>
 <br/>
-     <a class="btn btn-dark" style="border-radius:16px;"  href="{% url 'learn' %}" ><i class='fa fa-chevron-down'> Learn More</i></a> 
+     <a class="btn btn-dark" style="border-radius:16px;"  href="{% url 'learn' %}" ><i class='fa fa-chevron-down'>  Learn More</i></a> 
      {% if user.is_authenticated %}
      <a class="btn btn-dark" style="border-radius:16px;" href="{% url 'getstarted' user.username %}"><i class='fa fa-hourglass-start'>  Get Started</i></a>
      {% endif %}
-      </center>      	
+      </center>   
+     	
 </div>
 
 

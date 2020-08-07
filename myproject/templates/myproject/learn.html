@@ -1,15 +1,56 @@
 {%extends "myproject/layout.html" %}
+{%block title%} Blackclover|LEarn more{%endblock%}
+<head>
+
+	<style type="text/css">
+		.fa-github,.fa-linkedin, .fa-facebook-square, .fa-instagram{
+    color:white;
+    padding:10px;
+}
+	</style>
+
+	</head>
 
 {%block body%}
-<h1 style="color: red">Learn More</h1>
-<body style="background-color: black">
-<div class=container id="middle">
-	<br/><br/><br/><br/><br/>
-Cropping images is a fairly common use case in a Web application. For example, some applications let you upload a profile picture. In addition, it usually also let you crop and resize the image for a better result.
+<div class="nav">
+<h1><a style="color: white;font-family: Lobster;" href="{%url 'index' %}">Blackclover</a></h1>
 
+</div>
+<h1 style="color: white;text-align: center;font-family: Veranda">Learn More</h1>
+<body style="background-color: black;color: white">
+<div class=container id="middle">
+	<img src= https://simpleisbetterthancomplex.com/media/2017/03/featured-crop.jpg>
+	<br/>
+Cropping images is a fairly common use case in a Web application. <br/>For example, some applications let you upload a profile picture. In addition, it usually also let you crop and resize the image for a better result.
+<hr/>
 This application demonstrate how to upload an image, display a preview in a modal, crop the image and finally upload it and save in the server.
 
-If you are not familiar with file upload in Django, check this post for a quick reference: How to Upload Files With Django.
-Everyone is happy.</div>
+If you are not familiar with file upload in Django, check this post for a quick reference:<a href="https://docs.djangoproject.com/en/3.0/topics/http/file-uploads/"> How to Upload Files With Django</a>
+</div><br/>
+<center>
+ <a class="btn btn-outline-light" style="border-radius:16px;"  href="{% url 'index' %}" ><i class='fa fa-backward'> Go Back</i></a> 
+ <div style="color: white;padding: 50px;" >
+ 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+	<a href="https://www.linkedin.com/in/tanuja-joshi-b3a179193/">
+                  <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i>
+                </a>
+
+                  <a href="https://www.github.com/tanujajoshi1">
+                    <i class="fa fa-github fa-lg" aria-hidden="true"></i>
+                  </a>
+
+                
+
+                  <a href="https://www.facebook.com/tanuja.joshi.7902564">
+                    <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>
+                  </a>
+
+                  <a href="https://www.instagram.com/tanujajoshi24__/ ">
+                    <i class="fa fa-instagram fa-lg" aria-hidden="true"></i>
+                  </a>
+                
+</div>
+</center>
 </body>
+
 {%endblock%}

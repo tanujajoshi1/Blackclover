@@ -59,15 +59,16 @@
     });
 </script>
 
-
+{%block title%}Blackclover|Album {%endblock%}
 </head>
-
-{% block body %}
-
-  <h1 class="page-header">Album</h1>
-
+ 
+{% block body %}<body style="background-image: url('https://images.pexels.com/photos/2004159/pexels-photo-2004159.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')">
+<div class="nav">
+<h1><a style="color: white;font-family: Lobster" href="{%url 'index' %}">Black Clover</a></h1>
+</div>
+<hr/><br/><Br/>
   <!-- FORM TO UPLOAD THE IMAGES -->
-  <form method="post" enctype="multipart/form-data" id="formUpload">
+  <form method="post" enctype="multipart/form-data" id="formUpload" style="color: white">
     {% csrf_token %}
     {{ form }}
 
@@ -110,6 +111,9 @@
       </div>
     {% endfor %}
   </div>
+</div>
+
+</body>
 
 {% endblock %}
 
