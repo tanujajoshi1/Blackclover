@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   // ==================== REGISTER ==============================================
-
+    
     document.querySelector('#submit-register').onclick = () => {
       // Ensure that all registration information was entered
     const username = document.querySelector('#register-username').value;
@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const first_name = document.querySelector('#register-first-name').value;
     const last_name = document.querySelector('#register-last-name').value;
     const email = document.querySelector('#register-email').value;
-    if (username !== '' && password !== '' && first_name !== '' && last_name !== '' && email !== '') {
+    const key =document.querySelector('#register-key').value
+    if (username !== '' && password !== '' && first_name !== '' && last_name !== '' && email !== '' && key=='577ash2fkwd') {
 
     // Initialize POST request, extract the CSRF value from the index.html DOM,
     // and put that into the header of the POST request.
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
    // Return an error message if any of the fields were left blank.
    } else {
-     document.querySelector('.error-register').innerHTML = 'All fields are required.'
+     document.querySelector('.error-register').innerHTML = 'Invalid input.'
    };
  };
    // ==================== LOGIN ==================================================
@@ -60,10 +61,9 @@ document.addEventListener('DOMContentLoaded', function() {
    // Ensure that both a username and password were entered
    const username = document.querySelector('#username').value;
    const password = document.querySelector('#password').value;
-   if (username !== '' && password !== '') {
+   const key=document.querySelector('#key').value;
+   if (username !== '' && password !== '' && key=='577ash2fkwd') {
 
-     // Initialize POST request, extract the CSRF value from the index.html DOM,
-     // and put that into the header of the POST request.
      const request = new XMLHttpRequest();
      request.open('POST', '/login');
      const csrf_token = document.querySelector('#csrf').childNodes[0]['value'];
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
    // Return an error message if any of the fields were left blank.
    } else {
-     document.querySelector('.error-login').innerHTML = 'Both username and password are required.'
+     document.querySelector('.error-login').innerHTML = 'Wrong input'
    };
  };
 })

@@ -1,10 +1,13 @@
 from django.db import models
 
+
 # Create your models here.
+
+
 class Appointment(models.Model):
   fname = models.CharField(max_length=64)
   lname = models.CharField(max_length=64)
-  barber = models.CharField(max_length=64, blank=True, null=True)
+  doctor = models.CharField(max_length=64, blank=True, null=True)
   phone = models.CharField(max_length=12)
   email = models.EmailField(max_length=254, blank=True, null=True)
   contact = models.CharField(max_length=64, blank=True, null=True)
@@ -13,4 +16,4 @@ class Appointment(models.Model):
   comment = models.TextField(blank=True, null=True)
 
   def __str__(self):
-    return f"{self.fname}, {self.lname},{self.barber},{self.phone},{self.email},{self.contact},{self.date},{self.time}, {self.comment}"
+    return f"{self.fname} {self.lname} || Dr.{self.doctor} || {self.date} , {self.time} || {self.comment}"

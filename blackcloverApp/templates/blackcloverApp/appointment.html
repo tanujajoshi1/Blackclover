@@ -11,45 +11,45 @@
 <!-- Body -->
 
 <!-- Form -->
-<body style="background-image: url(https://images.unsplash.com/photo-1530519729491-aea5b51d1ee1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80);background-attachment: fixed;background-repeat: no-repeat;">
+<body style="background-image: url(https://images.unsplash.com/photo-1511184150666-9bb7d41a88f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);background-attachment: fixed;">
 <div class="container" >
   <div class="row">
     <div class="col-md-10 offset-md-1">
       <span class="anchor" id="formComplex"></span>
       <div id="appointmetForm">
           <h1 style="color: rgb(2, 2, 41);font-family: sans-serif;font-weight: bold;" >Appointment Form</h1>
-          <p style="color: rgb(2, 2, 41)">Make an appointment </p>
+          <p style="color: rgb(2, 2, 41)">Fix appointment for the patient   </p>
         </div>
         
       <hr style="border:1px solid rgb(10, 10, 126);">
 
       <form method="post" style="font-family: sans-serif;padding: 30px;">{% csrf_token %}
 
-        <div class="form-row mt-4">
+        <div class="form-row mt-1">
           <div class="col-sm-5 pb-3">
             <label for="firstname">First Name</label>
-            <input type="text" class="form-control" name="fname" placeholder="First Name" id="fname" required="true">
+            <input type="text" class="form-control" name="fname" placeholder="Patient's First Name" id="fname" required="true">
           </div>
           <br/>
           <div class="col-sm-5 pb-3">
-            <label for="lastname">Last Name</label>
-            <input type="text" class="form-control" name="lname" placeholder="Last Name" id="lname" required="true">
+            <label for="lastname"> Last Name</label>
+            <input type="text" class="form-control" name="lname" placeholder="Patient's Last Name" id="lname" required="true">
           </div>
           <br/>
           <div class="col-sm-4 pb-3">
-            <label for="phone">Phone</label>
+            <label for="phone">Patient's Phone</label>
             <input type="text" class="form-control" name="phone" placeholder="Phone Number" id="phone" required="true">
           </div>
           <br/>
           <div class="col-sm-5 pb-3">
-            <label for="email">Email</label>
+            <label for="email">Patient's Email</label>
             <input type="email" class="form-control" placeholder="Email" name="email" id="email">
           </div>
           
           <br/>
           <div class="col-sm-4 pb-3">
-            <label for="barber">Doctors Available</label>
-            <select class="form-control" id="barber" name="barber">
+            <label for="doctor">Doctors Available</label>
+            <select class="form-control" id="doctor" name="doctor">
               <option value="Amanda Li">Dr. Amanda Li </option>
               <option value="Jonathan Gilbert" >Dr. Jonathan Gilbert</option>
               <option value="George Ben">Dr. George Ben</option>
@@ -58,8 +58,8 @@
           </div>
          
           <div class="col-sm-4 pb-3">
-            <label for="myDate">Date</label>
-            <input required="true" type="date" class="form-control" name="myDate" id="myDate" placeholder="YYYY-MM-DD">
+            <label for="date">Date</label>
+            <input required="true" type="date" class="form-control" name="date" id="date" placeholder="YYYY-MM-DD">
           </div>
           <div class="col-sm-4 pb-3">
             <label for="time">Time</label>
@@ -77,17 +77,18 @@
               <option value="7pm-8pm">7pm-8pm</option>
             </select>
           </div>
-          <div class="col-md-6 pb-3">
-            <label for="exampleMessage">Comments (if any special detail)</label>
+          <div class="col-md-6 ">
+            <label for="exampleMessage">Description of Patient's problem OR any consultation</label>
             <textarea class="form-control" id="comment" name="comment"></textarea>
             
           </div>
-          <br/>
-          <div class="col-md-6 pb-3 pt-5"></div>
-            <button type="submit" name="submit" class="btn" style="color:white;background-color: darkblue;margin:10px;" id="submit-form">Submit</button>
-           
-          </div>
+        
           
+          
+          </div>
+          <div>
+            <button type="submit" name="submit" class="btn" style="color:white;background-color: darkblue;margin:10px;" id="submit-form">Submit</button>
+          </div>
         </div>
       </form>
 

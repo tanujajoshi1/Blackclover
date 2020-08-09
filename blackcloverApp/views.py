@@ -18,8 +18,8 @@ def appointment(request):
               phone=request.POST.get('phone'),
               email=request.POST.get('email'),
               contact=request.POST.get('contact'),
-              barber=request.POST.get('barber'),
-              date=request.POST.get('myDate'),
+              doctor=request.POST.get('doctor'),
+              date=request.POST.get('date'),
               time=request.POST.get('time'),
               comment=request.POST.get('comment'),
             )
@@ -28,7 +28,7 @@ def appointment(request):
 
     if add is not None:
      context = {
-      "client": Appointment.objects.last(),
+      "patient": Appointment.objects.last(),
      }
      return render(request, "blackcloverApp/index.html", context)
     else:
@@ -46,9 +46,11 @@ def login_view(request):
     # fields are not empty
     username = request.POST["username"]
     password = request.POST["password"]
+    
     if username == '' or password == '':
       return HttpResponse('{"success": false, "message": "Both username and password are required."}')
-
+    
+    
     # Django built-in username & password authentication + login session -- by
     # logging the user in, request.user.is_authenticated == True in the
     # def index(request): route.
@@ -56,6 +58,7 @@ def login_view(request):
     if user is not None:
       login(request, user)
       return HttpResponse('{"success": true, "message": ""}')
+    
     else:
       return HttpResponse('{"success": false, "message": "Invalid username and/or password."}')
 
@@ -73,10 +76,13 @@ def register_view(request):
   first_name = request.POST['first_name']
   last_name = request.POST['last_name']
   email = request.POST['email']
+  
+  
   if username == '' or password == '' or first_name == '' or last_name == '' or email == '':
     return HttpResponse('{"success": false, "message": "All fields must be completed."}')
     # Try to see if the username already exists in the database; if not, register
   # a new user.
+  
   try:
     User.objects.get(username=username)
     return HttpResponse('{"success": false, "message": " ERROR! Username already exists."}')

@@ -21,10 +21,11 @@
    <form>
          <input class="form-control" id="username" name="username" type="text" placeholder="Username" required>
          <input class="form-control" id="password" name="password" type="password" placeholder="Password" required>
-       <button class="btn float-right login_btn"  id="submit-login" style="background-color: darkblue;color:white">Login</button>
-     
+         <input class="form-control" id="key" name="key" type="password" placeholder="Blackclover's Key" required>
+         <button class="btn float-right login_btn"  id="submit-login" style="background-color: darkblue;color:white">Login</button>
+         
     </form>
-   <div class="error-login"></div>
+    <div style="color: red;font-weight: bold;" class="error-login"></div>
  </div>
 
  <!-- Register -->
@@ -37,13 +38,15 @@
 <input class="form-control" id="register-last-name" name="last_name" type="text" placeholder= " Last name" required>                                
 <input class="form-control"id="register-email" name="email" type="text" placeholder="Email" required>                                
 <input type="password"  id="register-password" class="form-control" name="password" placeholder="Password">                                
- <input type="password" class="form-control" name="confirmation" placeholder="Confirm password">                                
-  
+
+<input type="password" class="form-control" name="confirmation" placeholder="Confirm password">                                
+<input class="form-control" id="register-key" name="key" type="password" placeholder="Blackclover Cares Key" required>  
   <div class="form-group">
       <input type="submit" id="submit-register" style="background-color: darkblue;color:white"  class="btn float-right login_btn">
   </div>
+ 
    </form>
-   <div class="error-register"></div>
+   <div style="color: red;font-weight: bold;" class="error-register"></div> 
  </div>
  </div>
  </div>
@@ -56,14 +59,14 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="/"><i class="fa fa-pagelines fa-2x" aria-hidden="true"></i><span style="font-weight: bold;font-size: larger;">  Blackclover Cares </span></a>    
-    {% if client.fname%}
-    <div class="alert alert-success" role=alert>Your appointment is successfully received !! <br/> {{ client.fname }} {{client.lname}} {{client.date}} {{ client.time }}</div>
+    {% if patient.fname%}
+    <div class="alert alert-success" role=alert>Patient's appointment is registered <br/> {{ patient.fname }} {{patient.lname}} || <b>{{patient.date}} {{ patient.time }} </b> || <b> Dr.{{patient.doctor}} </b></div>
     {% endif %}
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
         
         <li type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-          <a class="nav-link"><button class="btn btn-success">Make an Appointment</button></a>
+          <a class="nav-link"><button class="btn btn-success">Fix Patient's Appointment</button></a>
           </li>
 
    
@@ -79,17 +82,16 @@
      <div id="home">
        <br/>  <br/>  <br/>
       <div style="text-align: left;color: rgb(2, 2, 41);font-family: sans-serif;" >
-        AT BLACKCLOVER CARES
+         BLACKCLOVER CARES
    <p style="font-size: larger;font-weight: bold;font-size: 70px;">
-   Our doctors specialize in you</p>
-        From treating the rarest symptoms to performing the most<br/> complicated surgeries, 
-        we have expertise in your condition.</div>
+   Our doctors'<br/> Appointment Portal</p>
+        This application let doctors/receptionist to fix <br/> appointments for the patients.</div>
      </div>
 
      <!-- Our Services -->
      <div class="divSection">
        <div class="container-fluid">
-        <h2 class="text-center" style="color: rgb(4, 4, 80);font-weight:bold">Services</h2>
+        <h2 class="text-center" style="color: rgb(4, 4, 80);font-weight:bold;">"Service to Mankind is the service to God"</h2>
          <div class="row">
            <div class="col-sm-6" id="services">
              <img src="{% static 'img/ourServices.jpg' %}" alt="" class="img-fluid">
@@ -117,7 +119,7 @@
 
 <div class="divSection">
 <div class="container-fluid" id="doctors">
-  <h2 class="text-center" style="color: rgb(4, 4, 80);font-weight:bold">Specialized Doctors</h2>
+  <h2 class="text-center" style="color: rgb(4, 4, 80);font-weight:bold">Our Specialized Doctors</h2>
   <div class="row">
     <div class="col-sm-2" >
       <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="" class="img-fluid">Dr. Amanda Li
