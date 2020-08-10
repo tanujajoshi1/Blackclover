@@ -59,8 +59,11 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="/"><i class="fa fa-pagelines fa-2x" aria-hidden="true"></i><span style="font-weight: bold;font-size: larger;">  Blackclover Cares </span></a>    
-    {% if patient.fname%}
-    <div class="alert alert-success" role=alert>Patient's appointment is registered <br/> {{ patient.fname }} {{patient.lname}} || <b>{{patient.date}} {{ patient.time }} </b> || <b> Dr.{{patient.doctor}} </b></div>
+    {% if patient.fname %}
+    <div class="alert alert-success" role=alert>Patient's appointment is registered <br/> {{ patient.fname }} {{patient.lname}} || <b>{{patient.date}} {{ patient.time }} </b> || <b> Dr.{{patient.doctor}} </b><br/>
+      <a href="{%url 'logout_view' %}" >Logout</a> Or Go Back for making another appointment
+    </div>
+   
     {% endif %}
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
@@ -69,7 +72,7 @@
           <a class="nav-link"><button class="btn btn-success">Fix Patient's Appointment</button></a>
           </li>
 
-   
+           <li class="nav-item"  ><a href="{%url 'index' %}" class="nav-link"><button class="btn btn-secondary">Home</button></a></li>
           <li class="nav-item" id="team"><a href="#doctors" class="nav-link"><button class="btn btn-secondary">Doctors</button></a></li>
           <li class="nav-item" id="our-services"><a href="#services" class="nav-link"><button class="btn btn-secondary">Our Services</button></a></li>
           
@@ -188,10 +191,10 @@
       <div class="row">
         <div class="col-sm-8">
               <p><b>Blackclover Cares</b></p>
-              <p>Plot No. 1, Sector 16,</p>
-              <p>Faridabad, Haryana 121002.</p>
-            <p>Enquiry : +91 129 4330000</p>
-            <p>Emergency : +91-8506011111</p>
+              <p>Plot No. 1, Sector 16,
+              Faridabad, Haryana 121002.</p>
+            <p>Enquiry : +91 129 4330000 ,
+               Emergency : +91-8506011111</p>
             <p>Email Id : helpdesk@blackclovercares.com</p>
             </div>
     <center>

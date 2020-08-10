@@ -18,12 +18,12 @@
       <span class="anchor" id="formComplex"></span>
       <div id="appointmetForm">
           <h1 style="color: rgb(2, 2, 41);font-family: sans-serif;font-weight: bold;" >Appointment Form</h1>
-          <p style="color: rgb(2, 2, 41)">Fix appointment for the patient   </p>
+          <p style="color: rgb(2, 2, 41)">Fix appointment for the patient  <a href="{%url 'logout_view' %}">Logout</a> </p>
         </div>
         
       <hr style="border:1px solid rgb(10, 10, 126);">
 
-      <form method="post" style="font-family: sans-serif;padding: 30px;">{% csrf_token %}
+      <form method="post"  style="font-family: sans-serif;padding: 30px;">{% csrf_token %}
 
         <div class="form-row mt-1">
           <div class="col-sm-5 pb-3">
